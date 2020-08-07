@@ -28,6 +28,57 @@ function tabCreator(topicData) {
     const tab = document.createElement('div')
     tab.classList.add('tab')
     tab.textContent = topicData
+
+    tab.addEventListener('click', event => {
+
+        axios.get('https://lambda-times-api.herokuapp.com/articles')
+            .then(response => {
+                debugger
+                const selection = response.data.articles[topicData]
+                const cardContainer = document.querySelector('.cards-container')
+                selection.forEach(item => {
+                    cardContainer.appendChild(articleCreator(item))
+                })
+            })
+            .catch(error => {
+                debugger
+            })
+        })
     
     return tab
+}
+
+function articleCreator(articleObj) {
+
+    const card = document.createElement('div')
+    card.classList.add('card')
+
+    const headline = document.createElement('div')
+    headline.classList.add('headline')
+    headline.textContent = articleObj.headline
+
+    const authorDiv = document.createElement('div')
+    authorDiv.classList.add('author')
+
+    const imgContainer = document.createElement('div')
+    imgContainer.classList.add('img-container')
+
+    const authorImg = document.createElement('img')
+    authorImg.src = articleObj.authorPhoto
+
+    const authorNombre = document.createElement('span')
+    authorNombre.textContent = `By ${articleObj.authorName}`
+
+    card.appendChild(headline)    
+    card.appendChild(authorDiv)
+    authorDiv.appendChild(imgContainer)
+    authorDiv.appendChild(authorNombre)
+    imgContainer.appendChild(authorImg)
+
+    card.addEventListener('click', event => {
+        console.log(headline.textContent)
+    })
+
+    return card
+
 }
