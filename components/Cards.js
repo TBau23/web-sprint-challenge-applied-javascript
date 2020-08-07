@@ -26,7 +26,6 @@
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then(response => {
         const categories = Object.keys(response.data.articles)
-        console.log(categories)
         const cardContainer = document.querySelector('.cards-container')
         categories.forEach(category => {
             const categoryCollection = response.data.articles[`${category}`]

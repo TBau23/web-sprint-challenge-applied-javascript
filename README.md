@@ -28,13 +28,23 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM stands for the Document Object Model - essentially it provides a structure for accessing, manipulating, and building HTML via Javascript.
+
 2. What is an event?
+
+Events are pieces of code that run in the future under certain circumstances. They run depending on different types of interactions the user might have with a webpage, for instance clicking, hovering, certain key presses.
 
 3. What is an event listener?
 
+A method that allows you to program events and when they should occur. You give the event, such as click, and then the callback function that will be invoked when that event happens.
+
 4. Why would we convert a NodeList into an Array?
 
+Many array methods are not accessible on Nodelists, so you would have to convert it if you wanted to do certain actions.
+
 5. What is a component?
+
+Components are reusable and dynamic functions that are used create HTML elements.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -68,7 +78,7 @@ Your finished project must include all of the following requirements:
 
 - [X] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
-- [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
+- [X] Following the instructions in the `components/Cards.js` file, create the Cards.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
